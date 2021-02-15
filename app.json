@@ -17,10 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier":"com.glebdyakovdev.self_blog_rn_app",
+      "buildNumber":1,
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android":{
+      "package":"com.glebdyakovdev.self_blog_rn_app",
+      "versionCode":1,
+      "permissions":[]
     }
   }
 }

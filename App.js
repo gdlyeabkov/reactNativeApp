@@ -1,13 +1,20 @@
+import {Provider} from 'react-redux'
+import { AppNavigation } from './src/navigation/AppNavigation';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import {AppLoading} from 'expo'
+import React,{useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import store from './src/store/index';
 
 export default function App() {
+  const [isReady,setIsReady]=useState(false)
+  if(!isReady){
+	return <AppLoading startAsync={bootstrap} onError={err=>console.log(err)} onFinish={()=>setIsReadty(true)} />
+}
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <AppNavigation></AppNavigation>
+    </Provider>
   );
 }
 
